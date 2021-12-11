@@ -29,4 +29,7 @@ docker run -v $(pwd)/data:/data -it tts --srt-file test.srt --lang en-au --tempo
 
 A subtitle file is read by default in english. To choose an other language, juste specify in the filename following `filename.[language key].srt` where `[language key]` can be `fr` (french), `en`, `es` (spanish), `zh-CN` (chinese), ... Complete list can be found [here](https://pypi.python.org/pypi/gTTS)
 
-
+yum install -y mpg123 sox
+pip3 install -r requirements.txt
+docker外直接启动
+python3 subtitle_to_speech.py convert-str-to-wav-in-docker --srt-file CHS_project01.zh-CN.srt --lang zh-CN --tempo 1.35 --outfilename test-zh
